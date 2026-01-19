@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import Scene from "../../assets/Scene.jpg";
 import Scene from "../../assets/Patan.jpg";
-import NightScene from "../../assets/PatanNight.jpeg";
+import NightScene from "../../assets/nightcover.png";
 import MyPhoto from "../../assets/MyPhoto.jpg";
 import { FaLinkedin } from "react-icons/fa";
 import { FaCloudDownloadAlt } from "react-icons/fa";
@@ -11,7 +11,6 @@ import { FaDiscord } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import "./TypeWriter.css";
 import { useMode } from "../../layout/ModeContext";
-// import Cv from "../../assets/mycv.pdf";
 import Cv from "../../assets/Princecv.pdf"
 const MainProfile = () => {
   const { mode } = useMode();
