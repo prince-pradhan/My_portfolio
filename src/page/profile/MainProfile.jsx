@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import Scene from "../../assets/Scene.jpg";
-import Scene from "../../assets/Patan.jpg";
+import Scene from "../../assets/daycover.jpg";
 import NightScene from "../../assets/nightcover.png";
 import MyPhoto from "../../assets/MyPhoto.jpg";
 import { FaLinkedin } from "react-icons/fa";
