@@ -51,10 +51,10 @@
   40% {
     content: "React Developer";
   } */
-  /* 41%,
+  41%,
   60% {
     content: "Designer";
-  } */
+  }
 }
 
 @keyframes typing {
