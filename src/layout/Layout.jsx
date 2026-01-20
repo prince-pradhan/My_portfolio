@@ -7,11 +7,11 @@ import { MdLightMode } from "react-icons/md";
 import { useMode } from "./ModeContext";
 import GIFF from "../assets/NightTime.gif";
 import DayTime from "../assets/DayTime.gif";
+import Background from "./Background/Background";
 
 const Layout = () => {
   const { mode, toggleMode } = useMode();
   const [isMobile, setIsMobile] = useState(false);
-
 
   // console.log(isMobile,"ismobile");
 
@@ -37,7 +37,7 @@ const Layout = () => {
         color: mode === "dark" ? "#D1D5DB" : "black",
       }}
     >
-      {isMobile ?
+      {/* {isMobile ?
         <div style={{
           position: "absolute",
           backgroundColor: mode==="dark"?"#0B0F17":"#BEC2D3",
@@ -54,15 +54,28 @@ const Layout = () => {
             objectFit: "cover",
             zIndex: -1,
           }}
-        />}
+        />} */}
+      <div
+        style={{
+          position: "absolute",
+          backgroundColor: mode === "dark" ? "#0B0F17" : "#BEC2D3",
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+        }}
+      >
+        <Background />
+      </div>
 
-      {isMobile ?
+      {isMobile ? (
         <div style={{ width: "90%", height: "100%" }}>
           <Profile mode={mode} />
-          <div style={{ 
-            width: "100%", 
-            height: "100%"
-            }}>
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+          >
             <div
               style={{
                 backgroundColor:
@@ -75,7 +88,8 @@ const Layout = () => {
               <LandingUI />
             </div>
           </div>
-        </div> :
+        </div>
+      ) : (
         <div
           style={{
             width: "85%",
@@ -110,7 +124,8 @@ const Layout = () => {
               <LandingUI />
             </div>
           </div>
-        </div>}
+        </div>
+      )}
 
       <div
         style={{
