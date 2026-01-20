@@ -59,6 +59,7 @@ const Layout = () => {
         style={{
           position: "absolute",
           backgroundColor: mode === "dark" ? "#0B0F17" : "#BEC2D3",
+          color:mode==="dark"?"white":"black",
           width: "100%",
           height: "100%",
           zIndex: -1,

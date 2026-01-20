@@ -24,8 +24,8 @@ const AboutMe = () => {
     <section style={{ margin: "0 auto" }}>
       <HeaderText headerTitle="About Me" />
 
-      <div style={{ lineHeight: "1.6", color: "#333", marginBottom: "40px" }}>
-        <h2 style={{ fontSize: "1.5rem", color: "#222" }}>
+      <div style={{ lineHeight: "1.6", marginBottom: "40px" }}>
+        <h2 style={{ fontSize: "1.5rem" }}>
           Hello! I'm{" "}
           <span style={{ color: "#007bff" }}>Prince Raj Pradhan</span>.
         </h2>
