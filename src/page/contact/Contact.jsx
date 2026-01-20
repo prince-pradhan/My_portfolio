@@ -10,7 +10,7 @@ const Contact = () => {
       <HeaderText headerTitle="Get in Touch" />
       <div style={{ width: "100%", height: "100px" }}>
         <iframe
-          src=""
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14132.369851490103!2d85.23906825958656!3d27.68353696913643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb238acbafccc3%3A0xb4b4a5164197e3f5!2sSatungal%20Complex!5e0!3m2!1sen!2snp!4v1768893530181!5m2!1sen!2snp"
           width="100%"
           height="250px"
           style={{ filter: mode === "dark" ? "invert(100%)" : "none" }}
@@ -42,16 +42,20 @@ const Contact = () => {
         <TextField width="50%" placeholder="Email Address" />
       </div>
       <TextField width="97%" placeholder="Your Message" textarea={true} />
-      <button style={{
-        backgroundColor: "#EFCB89",
-        border: "1px solid #E5E5E5",
-        padding: "9px",
-        borderRadius: "6px",
-        width: "144px",
-        color: "black",
-        fontWeight: "bold",
-        boxShadow: "inherit"
-      }}>Submit</button>
+      <button
+        style={{
+          backgroundColor: "#EFCB89",
+          border: "1px solid #E5E5E5",
+          padding: "9px",
+          borderRadius: "6px",
+          width: "144px",
+          color: "black",
+          fontWeight: "bold",
+          boxShadow: "inherit",
+        }}
+      >
+        Submit
+      </button>
     </div>
   );
 };
