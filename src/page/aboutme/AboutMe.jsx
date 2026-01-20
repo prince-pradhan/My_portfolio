@@ -1,102 +1,127 @@
 import React from "react";
 import HeaderText from "../../components/HeaderText/HeaderText";
-import Html from "../../assets/Work/Html.png";
-import Js from "../../assets/Work/JS.png";
-import Css from "../../assets/Work/CSS.png";
-import ReactJs from "../../assets/Work/ReactJs.png";
-import Figma from "../../assets/Work/Figma.png";
-import GitLab from "../../assets/Work/GitLab.png";
-import GitLogo from "../../assets/Work/GitLogo.png";
-import flutter_logo from"../../assets/Work/flutter_logo.png";
-
-const Skill = [
-  {
-    img: flutter_logo,
-    title: "Flutter"
-  },
-  {
-    img: Html,
-    title: "Html",
-  },
-  {
-    img: Css,
-    title: "Css",
-  },
-  {
-    img: Js,
-    title: "Javascript",
-  },
-  {
-    img: ReactJs,
-    title: "ReactJs",
-  },
-  {
-    img: Figma,
-    title: "Figma",
-  },
-  {
-    img: GitLogo,
-    title: "Git",
-  },
-];
+import { Skill_List } from "./AboutDataInfo";
 
 const AboutMe = () => {
+  const calculateAge = (birthDate) => {
+    const today = new Date();
+    const birth = new Date(birthDate);
+    let age = today.getFullYear() - birth.getFullYear();
+    const monthDiff = today.getMonth() - birth.getMonth();
+
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && today.getDate() < birth.getDate())
+    ) {
+      age--;
+    }
+    return age;
+  };
+
+  const myAge = calculateAge("2002-10-04");
+
   return (
-    <div>
+    <section style={{ margin: "0 auto" }}>
       <HeaderText headerTitle="About Me" />
-      <div style={{ padding: "12px" }}>
-        <div>
-          <b>Hello! I'm Prince Raj Pradhan.</b>
-        </div>
-        <p>
-          I am Frontend Developer. I have been creating user-friendly
-          applications, and I hold a bachelor's
-          degree in Information Management (BIM) equips myself with a solid
-          understanding of information systems, data management, and technology
-          integration within organizations.
+
+      <div style={{ lineHeight: "1.6", color: "#333", marginBottom: "40px" }}>
+        <h2 style={{ fontSize: "1.5rem", color: "#222" }}>
+          Hello! I'm{" "}
+          <span style={{ color: "#007bff" }}>Prince Raj Pradhan</span>.
+        </h2>
+        <p style={{ fontSize: "1.1rem", maxWidth: "800px" }}>
+          I am a <strong>Frontend Developer</strong> passionate about creating
+          user-friendly applications. My bachelor's degree in Information
+          Management (BIM) provides me with a solid foundation in information
+          systems, data management, and technology integration.
         </p>
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1px" }}>
-            <p>Phone ............ 9808706524</p>
-            <div>Email ............ pradhanprince000@gmail.com</div>
+
+        {/* Quick Info Grid */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: "20px",
+            marginTop: "30px",
+            padding: "20px",
+            borderRadius: "12px",
+          }}
+        >
+          <div>
+            <strong>Phone:</strong> 9808706524
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <p>Address ............ Satungal, Chandragiri-11, Kathmandu</p>
-            <div>Age ............ 22</div>
+          <div>
+            <strong>Email:</strong> pradhanprince000@gmail.com
+          </div>
+          <div>
+            <strong>Address:</strong> Satungal, Kathmandu
+          </div>
+          <div>
+            <strong>Age:</strong> {myAge} Years
           </div>
         </div>
       </div>
-      <HeaderText headerTitle="Skills/ Tools" />
+
+      <HeaderText headerTitle="Skills & Tools" />
+
       <div
         style={{
           display: "flex",
-          flexDirection: "row",
-          gap: "4rem",
+          gap: "3rem",
           justifyContent: "center",
           flexWrap: "wrap",
-          marginTop:"2rem"
+          marginTop: "2rem",
         }}
       >
-        {Skill.map((data, index) => {
-          return (
+        {Skill_List?.map((data, index) => (
+          <div
+            key={index}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              transition: "transform 0.3s ease",
+              cursor: "default",
+            }}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.transform = "translateY(-5px)")
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.transform = "translateY(0)")
+            }
+          >
             <div
-              key={index}
               style={{
-                width: "50px",
-                height: "50px",
+                width: "60px",
+                height: "60px",
+                padding: "10px",
+                background: "#fff",
+                borderRadius: "12px",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
                 display: "flex",
-                flexDirection: "column",
-                alignItems:"center",
-                justifyContent:"center"
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
-              <img src={data?.img} style={{ width: "100%", height: "100%" }} />
-              <div><b>{data?.title}</b></div>
+              <img
+                src={data?.img}
+                alt={data?.title}
+                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              />
             </div>
-          );
-        })}
+            <div
+              style={{
+                marginTop: "10px",
+                fontSize: "0.9rem",
+                fontWeight: "600",
+              }}
+            >
+              {data?.title}
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 
